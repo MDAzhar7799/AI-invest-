@@ -1,5 +1,5 @@
 <<<<<<< HEAD
-# 🤖 AI Investment Research Agent
+#  AI Investment Research Agent
 
 > Enter a company name → the agent researches it → get a data-backed **INVEST or PASS** decision in ~15 seconds.
 
@@ -12,7 +12,7 @@
 An AI agent built with **LangGraph.js + Next.js** that autonomously researches any company and makes a structured investment decision. The agent runs 3 parallel web searches, feeds all data to GPT-4o-mini, and returns a clean verdict with score, summary, key metrics, and detailed reasoning.
 
 **What it produces:**
-- ✅ **INVEST** or ❌ **PASS** verdict
+- **INVEST** or  **PASS** verdict
 - Score out of 10 (with visual progress bar)
 - 2–3 sentence executive summary
 - 4 specific reasoning points
@@ -126,7 +126,7 @@ const result = await graph.invoke({ company: "Apple" });
 
 ## Key Decisions & Trade-offs
 
-### ✅ What I chose and why
+### What I chose and why
 
 **1. LangGraph over plain LangChain**
 LangGraph lets you define agents as explicit state machines (nodes + edges). This is easier to reason about, test, and extend vs chaining calls manually. For an interview: *"LangGraph is like a Redux reducer for agents — the state flows through defined nodes."*
@@ -146,7 +146,7 @@ Tavily is purpose-built for AI agents — it returns clean, extracted text rathe
 **6. JSON regex extraction as a safety net**
 The LLM is prompted to return pure JSON, but LLMs sometimes wrap it in markdown. The regex `/\{[\s\S]*\}/` extracts the JSON block regardless of wrapping, making parsing robust.
 
-### ❌ What I left out and why
+### What I left out and why
 
 | Left out | Why |
 |----------|-----|
@@ -164,7 +164,7 @@ The LLM is prompted to return pure JSON, but LLMs sometimes wrap it in markdown.
 ### 1. Apple Inc.
 ```
 Company: Apple Inc.
-Verdict: ✅ INVEST  |  Score: 9/10
+Verdict: INVEST  |  Score: 9/10
 
 Summary:
 Apple maintains exceptional business quality through its powerful ecosystem and rapidly
@@ -188,7 +188,7 @@ Analysis:
 ### 2. Zomato
 ```
 Company: Zomato
-Verdict: ✅ INVEST  |  Score: 7/10
+Verdict: INVEST  |  Score: 7/10
 
 Summary:
 Zomato achieved its first full year of profitability in 2024, validating its business model.
@@ -212,7 +212,7 @@ Analysis:
 ### 3. Paytm (One97 Communications)
 ```
 Company: Paytm
-Verdict: ❌ PASS  |  Score: 3/10
+Verdict: PASS  |  Score: 3/10
 
 Summary:
 Paytm faces significant existential challenges after RBI actions disrupted its core payments
@@ -340,7 +340,7 @@ The UI should show what step the agent is on while loading. How?
 Since you're not streaming, you can fake progress with `setInterval` cycling through step messages. This gives good UX without adding streaming complexity:
 
 ```typescript
-const STEPS = ["🔍 Searching...", "📊 Analyzing...", "🧠 Deciding..."];
+const STEPS = [ Searching...", "Analyzing...", "Deciding..."];
 useEffect(() => {
   if (!loading) return;
   const id = setInterval(() => setStep(i => (i + 1) % STEPS.length), 2000);
