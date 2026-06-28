@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🤖 AI Investment Research Agent
 
 > Enter a company name → the agent researches it → get a data-backed **INVEST or PASS** decision in ~15 seconds.
@@ -358,3 +359,6 @@ Push to GitHub, connect the repo to Vercel, and add your environment variables i
 ---
 
 *This transcript represents the key decision points in my development process. AI assistance accelerated architecture design, API integration, and debugging — I was able to explain and justify every decision made.*
+=======
+# AI-invest-
+>>>>>>> 6657d1d98a0ec768def726cdc20b188963ad1752
